@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap");
+
+:root {
+  --bg-1: #f9fbff;
+  --bg-2: #eef5ff;
+  --ink: #13213a;
+  --muted: #4d6289;
+  --card: rgba(255, 255, 255, 0.86);
+  --line: rgba(19, 33, 58, 0.12);
+  --accent: #0c76ff;
+  --accent-2: #00a88d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 28px 18px 72px;
+  color: var(--ink);
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.75;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(12, 118, 255, 0.15), transparent 38%),
+    radial-gradient(circle at 8% 80%, rgba(0, 168, 141, 0.16), transparent 30%),
+    linear-gradient(155deg, var(--bg-1), var(--bg-2));
+  animation: fadeIn 0.5s ease;
+}
+
+body > * {
+  width: min(920px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+  letter-spacing: 0.01em;
+  line-height: 1.28;
+  margin-top: 1.1em;
+  margin-bottom: 0.45em;
+}
+
+h1 {
+  margin-top: 0.3em;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  padding-bottom: 0.25rem;
+  border-bottom: 2px solid rgba(12, 118, 255, 0.22);
+}
+
+p {
+  color: var(--muted);
+  margin: 0.7em auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.8em auto 1.2em;
+  display: grid;
+  gap: 10px;
+}
+
+li {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+li > a {
+  display: block;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(19, 33, 58, 0.06);
+  transition: transform 0.16s ease, box-shadow 0.16s ease, border-color 0.16s ease;
+}
+
+li > a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(12, 118, 255, 0.38);
+  box-shadow: 0 12px 24px rgba(12, 118, 255, 0.13);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  margin: 10px auto 16px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background: rgba(12, 118, 255, 0.08);
+  font-family: "Space Grotesk", "Noto Sans JP", sans-serif;
+}
+
+@media (max-width: 680px) {
+  body {
+    padding: 16px 12px 56px;
+  }
+
+  li > a {
+    padding: 10px 11px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
